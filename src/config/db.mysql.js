@@ -21,6 +21,13 @@ const connection = mySql.createPool({
   connectionLimit,
 });
 
+// Masked startup log (do not print sensitive values)
+console.log(
+  "DB host:",
+  process.env.DB_HOST_NAME || "127.0.0.1",
+  "DB user:",
+  process.env.DB_USER_NAME || "(not set)"
+);
 /**
  * checkSQLConnection
  * ------------------------------------------------------------
